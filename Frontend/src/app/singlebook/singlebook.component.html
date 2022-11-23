@@ -1,0 +1,49 @@
+<app-navigator></app-navigator>
+
+<div class="section hero" *ngFor=" let singlebook of singlebooks">
+    <div class="container">
+        <div class="row">
+            <div class="one-half column col-6 textshadow" >
+                <h4 class="titleshadow">
+                    {{singlebook.title}}
+                </h4>
+                <ul>
+                    <li>Author :
+                        {{singlebook.author}}
+                    </li>
+                    <li>Language :
+                        {{singlebook.language}}
+                    </li>
+                    <li>Pages :
+                        {{singlebook.pageCount}}
+                    </li>
+                    <li>Category :
+                        {{singlebook.categories}}
+                    </li>
+                    <li>Published Date :
+                        {{singlebook.publishedDate}}
+                    </li>
+                </ul>
+
+
+            
+                <div class="column">
+                    <div class=" row value">
+                        <a class="button btn2" (click)="updateBook(singlebook)" [hidden]="_auth.loggedIn() && _auth.getUser()=='user' " id="updatebook">Update</a>
+                    </div>
+                    <div class=" row value">
+                        <a class="button btn2" (click)="deleteBook(singlebook)" [hidden]="_auth.loggedIn() && _auth.getUser()=='user' " id="deletebook">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="one-half column phones col-6">
+            <img class="phone" src="{{singlebook.image}}">
+        </div>
+    </div>
+</div>
+
+
+
+
+

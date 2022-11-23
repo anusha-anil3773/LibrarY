@@ -1,0 +1,73 @@
+
+
+
+<nav id="mainNavbar" class="navbar navbar-expand-sm navbar-light ">
+
+    <div class="fluid">
+    
+ 
+      <button class="navbar-toggler"type="button"data-toggle="collapse"data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"aria-expanded="false"aria-label="Toggle navigation"(click)="collapsed = !this.collapsed">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navbarSupportedContent"[ngClass]="{ collapse: collapsed, 'navbar-collapse': true }">
+        <!-- right nav menus -->
+        <ul class="navbar-nav ml-auto">
+            <a class="button" *ngIf="_auth.loggedIn()" routerLink="/books" routerLinkActive="active">Books</a>
+
+            <a class="button"  [hidden]="_auth.loggedIn() && _auth.getUser()=='user'" routerLink="/addbook">Add
+                Books</a>
+          
+            <a class="button" (click)="goToBottom()">Contact</a>
+            <a class="button" *ngIf="_auth.loggedIn()" (click)="logout()" routerLink="">Logout</a>
+         
+        </ul>
+       </div>
+    </div>
+    
+  </nav>
+  <div class="heading">
+    <img src="./assets/home1.png">
+</div>
+<div class="main">
+  <h1>Articles</h1>
+  <ul class="cards">
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://cdn.downtoearth.org.in/library/large/2022-10-28/0.35133400_1666958312_istock-482110960.jpg"></div>
+        <div class="card_content">
+          <h2 class="card_title">Antarctic ozone layer hole keeps shrinking in 2022: NASA, NOAA</h2>
+          <p class="card_text">The hole in the ozone layer became smaller in 2022, following the trend of the last two decades, according to the annual update by the United States National Aeronautics and Space Administration (NASA) and the National Oceanic and Atmospheric Administration (NOAA).</p>
+          <button class="btn card_btn">Read More</button>
+        </div>
+      </div>
+    </li>
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://cdn.downtoearth.org.in/library/large/2022-10-19/0.21541800_1666165650_forest.jpg"></div>
+        <div class="card_content">
+          <h2 class="card_title">World’s leading financial institutions continue to bankroll deforestation</h2>
+          <p class="card_text">The world’s largest financial institutions boosted their support for companies responsible for deforestation in 2021, according to a new report.
+
+            Finance for those businesses increased by more than 60 per cent between 2020 and 2021, stated the report published by the non-profit Forests and Finance Coalition October 18, 2022.</p>
+          <button class="btn card_btn">Read More</button>
+        </div>
+      </div>
+    </li>
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://cdn.downtoearth.org.in/library/large/2022-06-07/0.31961200_1654608082_court-order.png"></div>
+        <div class="card_content">
+          <h2 class="card_title">Daily Court Digest: Major environment orders (September 21, 2022)</h2>
+          <p class="card_text">Measures taken by the Brihanmumbai municipal corporation of Greater Mumbai to prevent fire at dumpsites could be replicated and adopted at Delhi’s Ghazipur dumpsites, noted a joint committee constituted by the National Green Tribunal (NGT).The tribunal constituted the committee after taking suo motu note of a news </p>
+          <button class="btn card_btn">Read More</button>
+        </div>
+      </div>
+    </li>
+    </ul>
+</div>
+
+
+<!-- ------------------------most popular-------------------------- -->
+
+<app-footer></app-footer>

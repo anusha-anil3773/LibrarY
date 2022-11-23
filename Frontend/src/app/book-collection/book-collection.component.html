@@ -1,0 +1,31 @@
+<app-navigator></app-navigator>
+
+
+
+
+    <h1 id="books">
+        Books Collections
+    </h1>
+   
+
+
+
+
+<section>
+    <div class="col">
+        <div class="row1">
+            <div class=" b" *ngFor='let BookCollection of BookCollections'>
+                <a style="cursor:pointer" (click)="getBook(BookCollection._id)">
+                    <!-- routerLink="/books/{{BookCollection._id}}" -->
+                    <img src="{{BookCollection.image}}">
+                    <br>
+                    <span class="book_name">
+                        {{BookCollection.title}}<br>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- --------------------------------footer------------------- -->
+<app-footer></app-footer>

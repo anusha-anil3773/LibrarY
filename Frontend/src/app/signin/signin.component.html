@@ -1,0 +1,40 @@
+
+
+ <div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+ 
+    <mat-card class="box">
+        <img style="height: 40px;" src="../assets/logo.jpg">
+        <mat-card-header>
+            <mat-card-title>LogIn</mat-card-title>
+        </mat-card-header>
+
+
+        <form class="example-form" [formGroup]="signinForm" (ngSubmit)="loginUser()">
+            <mat-card-content>
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Username" formControlName="username" type="text" name="username"
+                        [(ngModel)]="user.username">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Password" formControlName="password" type="password" name="password"
+                        [(ngModel)]="user.password">
+                </mat-form-field>
+
+            </mat-card-content>
+            
+            <button mat-stroked-button  class="btn-block" type="submit"
+                [disabled]="signinForm.pristine || signinForm.invalid" class="btn btn-success">Login</button>
+        </form><br>
+        <div class="mt-3">
+            <p class="small"><a class="text-primary" href="forget-password.html">Forgot password?</a></p>
+            <p class="mb-0  text-center">Don't have an account? <a routerLink="/register"
+                    class="text-primary ">SignIn</a></p>
+        </div>
+    </mat-card>
+
+</div>
+<app-footer></app-footer>
+
+<router-outlet></router-outlet>
